@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductList from './ProductList';
+import { useSelector } from 'react-redux';
+import Cart from './Cart';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const products = useSelector(store => store.products);
+
+	const productsArr = [];
+
+	const productsToArr = () => {
+		for (const key in products) {
+			productsArr.push({
+				id: key, 
+				...products[key]
+			})
+		}
+	}
+
+	productsToArr();
+
+	return (
+		<div className="App">
+			<header className="App-header">
+				<h1>Shoply</h1>
+				<Cart />
+				<ProductList products={productsArr} />
+			</header>
+		</div>
+	);
 }
 
 export default App;

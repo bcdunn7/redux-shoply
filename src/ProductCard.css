@@ -1,0 +1,31 @@
+.ProductCard {
+    width: 700px;
+    background-color: rgba(4, 4, 36, 0.288);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.ProductCard-img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.ProductCard button {
+    padding: 10px;
+    margin: 20px;
+}
+
+.ProductCard-add-btn {
+    background-color: rgb(123, 223, 123);
+    cursor: pointer;
+}
+
+.ProductCard-remove-btn {
+    background-color: rgb(216, 148, 148);
+    cursor: pointer;
+}
+
+.ProductCard span {
+    margin: 20px
+}
