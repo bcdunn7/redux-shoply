@@ -1,31 +1,17 @@
 import './App.css';
-import ProductList from './ProductList';
-import { useSelector } from 'react-redux';
-import Cart from './Cart';
+import Routes from './Routes';
+
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-
-	const products = useSelector(store => store.products);
-
-	const productsArr = [];
-
-	const productsToArr = () => {
-		for (const key in products) {
-			productsArr.push({
-				id: key, 
-				...products[key]
-			})
-		}
-	}
-
-	productsToArr();
 
 	return (
 		<div className="App">
 			<header className="App-header">
 				<h1>Shoply</h1>
-				<Cart />
-				<ProductList products={productsArr} />
+				<BrowserRouter>
+					<Routes/>
+				</BrowserRouter>
 			</header>
 		</div>
 	);
